@@ -1,0 +1,38 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Order {
+  uuid: ID!
+  order_status: String!
+  fulfillment_type: String!
+  payment_status: String!
+  mode_of_payment: String!
+  payment_network: String!
+  total_amount: String!
+}
+
+type Query {
+  orders(QueryOptions: QueryOptions!): [Order!]!
+}
+
+input QueryOptions {
+  page: Float
+  per_page: Float
+  sort: String
+  order_status: String
+  fulfillment_type: String
+}
+
+type Mutation {
+  createOrder(createOrderInput: OrderDTO!): Order!
+}
+
+input OrderDTO {
+  order_status: String!
+  fulfillment_type: String!
+  mode_of_payment: String!
+  payment_network: String!
+  payment_status: String!
+  total_amount: String!
+}
